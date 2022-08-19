@@ -6,7 +6,7 @@ const express = require("express");
 router = express.Router();
 
 // can be used to define a GET API.   URI -> CB function.
-router.get("/customer/all", (request, response) => {
+router.get("/", (request, response) => {
   database.connection.all("select * from customer", (errors, results) => {
     if (errors) {
       response.status(500).send("Some error occurred");
